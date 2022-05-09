@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:nike_shoes/nike_shoes_store_app/nike_shoe.dart';
 import 'package:nike_shoes/nike_shoes_store_app/nike_shoes_details.dart';
 
+import '../widget/widgets.dart';
+
 class NikeShoesStoreHome extends StatelessWidget {
 
    
    NikeShoesStoreHome({Key? key}) : super(key: key);
+
+ 
+
 
   final ValueNotifier<bool> notifierBottomBarVisible= ValueNotifier(true);
 
@@ -127,22 +132,31 @@ class NikeShoesItem extends StatelessWidget {
            children: [
              //positions.fill para que ocupe todo el espacio
              Positioned.fill(
-               child: Container(
-                 decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(20.0),
-                 color: Color(shoesItem.color),
-                 )
+               child: Hero(
+                 tag: 'background_${shoesItem.model}',
+                 child: Container(
+                   decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(20.0),
+                   color: Color(shoesItem.color),
+                   )
+                 ),
                ),
              ),
              Align(
                alignment: Alignment.topCenter,
-               child: SizedBox(
-                 height: itemHeight * 0.6,
-                 child: FittedBox(
-                   child:  Text(
-                     shoesItem.modelnumber.toString(),
-                     style :  TextStyle( color: Colors.black.withOpacity( 0.02 ),)
-                    ),
+               child: Hero(
+                 tag: 'number_${shoesItem.model}',
+                 child: SizedBox(
+                   height: itemHeight * 0.6,
+                   child: Material(
+                     color: Colors.transparent,
+                     child: FittedBox(
+                       child:  Text(
+                         shoesItem.modelnumber.toString(),
+                         style :  TextStyle( color: Colors.black.withOpacity( 0.02 ))
+                        ),
+                     ),
+                   ),
                  ),
                ),
              ),
@@ -150,9 +164,12 @@ class NikeShoesItem extends StatelessWidget {
                top: 20,
                left: 90,
                height: itemHeight * 0.6,
-               child: Image.asset(
-                 shoesItem.image.first,
-                 fit : BoxFit.contain
+               child: Hero(
+                 tag: 'image_${shoesItem.model}',
+                 child: Image.asset(
+                   shoesItem.image.first,
+                   fit : BoxFit.contain
+                 ),
                )
              ),
             const Positioned(

@@ -26,9 +26,9 @@ class NikeShoes {
        oldPrice: 299, 
        currentPrice: 149,
        image: [
-      'assets/shoes2_1.png',
-      'assets/shoes2_2.png',
-      'assets/shoes2_3.png',
+      'assets/shoes1_1.png',
+      'assets/shoes1_2.png',
+      'assets/shoes1_3.png',
       ],
        modelnumber: 90,
        color: 0xFFF6F6F6
