@@ -7,7 +7,7 @@ class AppTheme{
   static const Color primary = Colors.indigo;
 
   static final ThemeData ligthTheme= ThemeData.light().copyWith(
-    primaryColor: Colors.indigo,
+    primaryColor: Colors.red,
     
 
   );
