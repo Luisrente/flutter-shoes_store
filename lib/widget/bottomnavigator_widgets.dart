@@ -8,20 +8,13 @@ class CustomNavigatonBar extends StatelessWidget {
     return  BottomNavigationBar(
       items: const [
          BottomNavigationBarItem(
-          icon: Icon(Icons.map),
+          icon: Icon(Icons.qr_code),
           label: 'luis'
          ),
          BottomNavigationBarItem(
-          icon: Icon(Icons.map),
+          icon: Icon(Icons.numbers_outlined),
                     label: 'luis'
-
-         ),
-         BottomNavigationBarItem(
-          icon: Icon(Icons.map),
-                    label: 'luis'
-
-         ),
-
+         )
       ]
     );
   }
